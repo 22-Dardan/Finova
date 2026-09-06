@@ -1,0 +1,184 @@
+/* =========================
+   FINOVA GLOBAL STYLE
+========================= */
+
+:root {
+  --bg: #0f0f0f;
+  --card: #181818;
+
+  --accent: #353c2e;
+  --accent-light: #4a5341;
+
+  --text: #ffffff;
+  --muted: #9ca3af;
+
+  --border: #262626;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family: "Inter", sans-serif;
+
+  min-height: 100vh;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.custom-navbar {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 10px;
+
+  padding: 14px;
+
+  background: rgba(15, 15, 15, 0.96);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-btn {
+  border: none;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  padding: 16px 10px;
+
+  border-radius: 14px;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.03);
+
+  color: var(--text);
+}
+
+.nav-btn.active {
+  background: var(--accent);
+
+  color: white;
+
+  box-shadow: 0 0 20px rgba(74, 83, 65, 0.25);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.main-container {
+  width: 100%;
+
+  padding: 30px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .custom-navbar {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  width: calc(100% - 40px);
+
+  margin: 60px auto 20px auto;
+
+  text-align: center;
+
+  padding: 30px 20px;
+
+  background: var(--accent);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  border-radius: 24px;
+}
+
+.footer p {
+  color: white;
+
+  font-size: 14px;
+
+  margin: 0;
+
+  letter-spacing: 1px;
+}
+#pageLoader {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  backdrop-filter: blur(10px);
+  transition: opacity 0.4s ease;
+}
+
+.spinner {
+  width: 55px;
+  height: 55px;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  border-top: 4px solid #22c55e;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+#pageLoader .loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#pageLoader p {
+  margin: 0;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
